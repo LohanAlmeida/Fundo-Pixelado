@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap");
+:root {
+  --x: 50%;
+  --y: 50%;
+  --radius: 30vmin;
+  --blur: 3vmax;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: black;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Lexend", serif;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  z-index: 1;
+}
+h1 {
+  font-size: 7vw;
+  color: white;
+  text-shadow: 1px 1px 1vw rgba(0, 0, 0, 0.3);
+}
+#bg,
+#bg_focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#bg_focus {
+  mask-image: radial-gradient(
+    circle 50vmin at var(--x) var(--y),
+    black var(--radius),
+    transparent calc(var(--radius) + var(--blur)),
+    transparent
+  );
+}
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#bg img {
+  image-rendering: pixelated;
+}
